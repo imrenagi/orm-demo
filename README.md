@@ -1,4 +1,4 @@
-# ORM DEMO
+# Comparing GORM vs SQL
 
 Just wanted to make self-documentation about tradeoff between using ORM like (gorm) and raw SQL query using `database/sql` package in golang.
 
