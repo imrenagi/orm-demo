@@ -6,6 +6,7 @@ Summary:
 * Use a simple model which has multiple relationships (has one, belongs to, has many and many-to-many).
 * Create two repositories: one that is using `*gorm.DB` and another one that is using `*sql.DB`. Those two data repositories are demonstrating the API differences between `gorm` and `sql`. You can see how big differences `gorm` makes in simplifying the database queries and struct construction.
 * You can refer to the unit test to see that those two repositories are fetching the same number of data and fields.
+* For fetching simple data structure, `gorm` and `sql` package has no big difference in terms of performance. But, when it is trying to fetch complex data structure, `sql` outperforms `gorm`. Look at the benchmark result below!
 
 Below is the benchmark of the experiments. I dont want to explain, look at these data below by yourself and try to make sense of it by looking at the source code for each package.
 
