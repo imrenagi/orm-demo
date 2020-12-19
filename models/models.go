@@ -12,14 +12,18 @@ type Person struct {
 	PlaceOfBirth *PlaceOfBirth //has one relationship
 	School       *School       //belongs to relationship
 	Addresses    []Address     `gorm:"foreignKey:PersonID"`     //has many relationship
-	Group        []Group       `gorm:"many2many:person_groups"` //many-to-many relationship
+	Groups       []Group       `gorm:"many2many:person_groups"` //many-to-many relationship
+}
+
+func (Person) TableName() string {
+	return "persons"
 }
 
 type PlaceOfBirth struct {
 	ID       uint   `gorm:"primaryKey"`
 	City     string `gorm:"type:varchar;not null"`
 	PersonID uint
-	Date     time.Time
+	Date     *time.Time
 }
 
 type Address struct {
